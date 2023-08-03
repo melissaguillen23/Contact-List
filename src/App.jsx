@@ -1,13 +1,11 @@
 import './App.css'
+import ContactList from './components/ContactList'
 
 function App() {
 
   return (
     <>
-      <div>
-      </div>
-      <div className="card">
-      </div>
+      <ContactList />
     </>
   )
 }
