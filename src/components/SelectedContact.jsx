@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from "react"; 
 
-export default function SelectedContact({selectedContactId}) {
+export default function SelectedContact({selectedContactId, setSelectedContactId}) {
   const [selectedContact, setSelectedContact] = useState(null);
 
   useEffect(() => {
@@ -11,6 +11,7 @@ export default function SelectedContact({selectedContactId}) {
             const response = await fetch(`https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/${selectedContactId}`);
             const result = await response.json();
             setSelectedContact(result)
+            console.log("Fetched Contact:", result);
         } catch (error) {
             console.error(error);
         }
